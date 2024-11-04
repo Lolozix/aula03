@@ -10,9 +10,7 @@ export default function Home() {
                 const resposta = await fetch('https://fakestoreapi.com/products');
                 const listaProdutos = await resposta.json();
                 setProdutos(listaProdutos);
-            } 
-            catch (erro) {
-                console.error("Erro ao receber produtos:", erro);
+            }catch (erro) {
                 alert("Ocorreu um erro ao receber os produtos");
             }
         };

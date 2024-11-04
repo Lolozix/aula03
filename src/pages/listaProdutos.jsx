@@ -1,10 +1,16 @@
+import React from "react";
+import styles from "./listaProdutos.module.css";
+
 export default function ListaProdutos({ produtos }) {
+    if (produtos.length === 0) {
+        return <h1>Carregando...</h1>;    
+    }
+
     return (
-        <section>
-            <h1>Lista de Produtos</h1>
-            <ul>
+        <>
+            <ul className={styles.bloco}>
                 {produtos.map(produto => (
-                    <li key={produto.id}>
+                    <li key={produto.id} className={styles.item}>
                         <h2>{produto.title}</h2>
                         <p>{produto.description}</p>
                         <p>Preço: R${produto.price}</p>
@@ -12,6 +18,6 @@ export default function ListaProdutos({ produtos }) {
                     </li>
                 ))}
             </ul>
-        </section>
+        </>
     );
 }
