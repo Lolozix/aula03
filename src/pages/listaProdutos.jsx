@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./listaProdutos.module.css";
+import styles from "styles/listaProdutos.module.css";
 
 export default function ListaProdutos({ produtos }) {
     if (produtos.length === 0) {
